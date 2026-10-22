@@ -13,7 +13,8 @@
 <meta property="og:url" content="https://ivanalimov540-dotcom.github.io/ailavka/">
 <meta property="og:image" content="https://ivanalimov540-dotcom.github.io/ailavka/a/lineup-og.jpg">
 <link rel="preload" as="image" href="a/lineup-2000.webp" imagesrcset="a/lineup-1000.webp 1000w, a/lineup-2000.webp 2000w" imagesizes="(max-width:600px) 480px, min(1320px, 92vw)" fetchpriority="high">
-<link rel="icon" href="a/logo_full.png">
+<link rel="icon" href="a/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="a/logo_full.png">
 <link rel="preload" href="a/f/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="a/f/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -36,7 +37,7 @@ img{display:block;max-width:100%}
 /* header */
 header{position:sticky;top:0;z-index:50;display:flex;align-items:center;height:var(--hh);padding:0 var(--pad);border-bottom:1px solid var(--line);
   background:rgba(0,0,0,.72);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px)}
-.logo img{height:30px}
+.logo img{height:30px;width:auto}
 nav.main{display:flex;gap:30px;margin-left:64px;font-size:15px;color:var(--mute)}
 nav.main a{transition:color .2s}
 nav.main a:hover,nav.main a.on{color:var(--ivory)}
@@ -191,7 +192,7 @@ section{position:relative}
 .map{position:relative;display:block;min-height:520px;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:#111}
 .map iframe{position:absolute;top:-70px;left:0;width:calc(100% + 70px);height:calc(100% + 70px);border:0;pointer-events:none;filter:grayscale(1) invert(.9) contrast(.88) brightness(.95)}
 .pin{position:absolute;left:calc(50% + 35px);top:calc(50% - 35px);z-index:2;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;display:grid;place-items:center;background:#0E0E0F;border:1.5px solid var(--o1);box-shadow:0 0 0 6px rgba(232,132,78,.18),0 10px 30px rgba(0,0,0,.6)}
-.pin img{width:40px;height:40px;border-radius:50%}
+.pin img{width:26px;height:32px}
 .pin::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(246,184,136,.6);animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.2);opacity:0}}
 .map:hover .tag{border-color:rgba(246,184,136,.45)}
@@ -199,7 +200,7 @@ section{position:relative}
 .map .tag b{font-weight:400}.map .tag span{color:var(--o1)}
 
 footer{margin-top:150px;padding:40px var(--pad) 46px;border-top:1px solid var(--line);display:flex;align-items:center;gap:40px;font-size:14px;color:var(--mute)}
-footer .logo img{height:24px}
+footer .logo img{height:24px;width:auto}
 footer nav{display:flex;gap:26px}
 footer nav a:hover{color:var(--ivory)}
 footer .r{margin-left:auto}
@@ -542,7 +543,7 @@ footer .r{margin-left:auto}
 <body>
 
 <header>
-  <a class="logo" href="#top" aria-label="ай.лавка — на главную"><img src="a/word_light.webp" alt="ай.лавка" width="320" height="60"></a>
+  <a class="logo" href="#top" aria-label="ай.лавка — на главную"><img src="a/logo.svg" alt="ай.лавка" width="160" height="31"></a>
   <nav class="main">
     <a href="#iphone" class="on">iPhone</a><a href="#c/ipad">iPad</a><a href="#c/mac">Mac</a><a href="#c/watch">Watch</a><a href="#c/airpods">AirPods</a><a href="#c/samsung">Samsung</a><a href="#c/dyson">Dyson</a><a href="#used">Б/у</a>
   </nav>
@@ -682,7 +683,7 @@ footer .r{margin-left:auto}
       </div>
       <a class="map rv" href="https://yandex.ru/maps/?pt=65.540928%2C57.147546&z=17&l=map" target="_blank" rel="noopener" aria-label="Открыть ай.лавку на Яндекс Картах">
         <iframe src="https://yandex.ru/map-widget/v1/?ll=65.540928%2C57.147546&z=16" title="ай.лавка на карте" loading="lazy" tabindex="-1"></iframe>
-        <span class="pin"><img src="a/logo_full.png" alt=""></span>
+        <span class="pin"><img src="a/mark.svg" alt=""></span>
         <span class="tag"><b>Герцена, 86а</b><span>Открыть карту →</span></span>
       </a>
     </div>
@@ -690,7 +691,7 @@ footer .r{margin-left:auto}
 </main>
 
 <footer>
-  <a class="logo" href="#top"><img src="a/word_light.webp" alt="ай.лавка" width="320" height="60"></a>
+  <a class="logo" href="#top"><img src="a/logo.svg" alt="ай.лавка" width="160" height="31"></a>
   <nav><a href="#iphone">iPhone 18 Pro</a><a href="#c">Каталог</a><a href="#used">Б/у</a><a href="#trade">Trade-in</a><a href="#trade">Рассрочка</a><a href="#contacts">Контакты</a></nav>
   <span class="r">© 2026 ай.лавка · Тюмень</span>
 </footer>
@@ -955,13 +956,15 @@ footer .r{margin-left:auto}
   function showCat(){if(!cv.classList.contains('open')){cv.classList.add('open');cv.setAttribute('aria-hidden','false');document.body.classList.add('lock')}}
   function hideCat(){cv.classList.remove('open');cv.setAttribute('aria-hidden','true');if(!$('.ov.open')&&!$('#menu').classList.contains('open'))document.body.classList.remove('lock')}
   function route(){var p=parseC(location.hash);if(!p){hideCat();return}renderCat(p);showCat()}
-  function goCat(h){var d=(history.state&&history.state.cv)||0;history.pushState({cv:d+1},'',h);route()}
-  function closeCat(after){var d=(history.state&&history.state.cv)||0;
-    if(d>0){var done=function(){window.removeEventListener('popstate',done);if(after)setTimeout(after,30)};window.addEventListener('popstate',done);history.go(-d)}
+  // одна запись в истории на весь каталог: «закрыть» и «назад» в браузере сразу возвращают на главную
+  function goCat(h){if(cv.classList.contains('open'))history.replaceState(history.state,'',h);else history.pushState({cv:1},'',h);route()}
+  function closeCat(after){
+    if(history.state&&history.state.cv){var done=function(){window.removeEventListener('popstate',done);if(after)setTimeout(after,30)};window.addEventListener('popstate',done);history.back()}
     else{history.replaceState(null,'',location.pathname+location.search);hideCat();if(after)after()}}
   window.addEventListener('popstate',route);
   $('#cvClose').addEventListener('click',function(){closeCat()});
-  $('#cvBack').addEventListener('click',function(){var d=(history.state&&history.state.cv)||0;if(d>0)history.back();else{var p=parseC(location.hash)||[];if(!p.length){closeCat();return}p.pop();history.replaceState(null,'',p.length?'#c/'+p.join('/'):'#c');route()}});
+  // «←» — на уровень выше по разделам: модель → линейка → весь каталог → главная
+  $('#cvBack').addEventListener('click',function(){var p=parseC(location.hash)||[];if(!p.length){closeCat();return}p.pop();history.replaceState(history.state,'',p.length?'#c/'+p.join('/'):'#c');route()});
   route();
   (function(){
     var warm=function(){var u={};CAT.forEach(function(c){u[c.img]=1;c.sub.forEach(function(x){if(x.img)u[x.img]=1;(x.items||[]).forEach(function(i){if(i.cover)u[i.cover]=1})})});
