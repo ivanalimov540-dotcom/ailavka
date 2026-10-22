@@ -1020,7 +1020,7 @@ footer .r{margin-left:auto}
     }
   }
   var lastOrder=null;
-  function openCart(){step=cart.length?'list':'list';renderCart();openOv(cartOv)}
+  function openCart(){step='list';$('#toast').classList.remove('show');renderCart();openOv(cartOv)}
   function bindGroups(root){$$('[data-group]',root).forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;$$('button',g).forEach(function(x){x.classList.toggle('on',x===b)})})})}
   drawer.addEventListener('click',function(e){
     var q=e.target.closest('[data-q]');if(q){var l=cart[+q.dataset.i];l.qty=Math.max(1,l.qty+(+q.dataset.q));saveCart();badge();renderCart();sync();return}
