@@ -201,6 +201,108 @@ footer nav{display:flex;gap:26px}
 footer nav a:hover{color:var(--ivory)}
 footer .r{margin-left:auto}
 
+
+/* каталог */
+.cv{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;background:#000;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .35s,visibility .35s,transform .35s}
+.cv.open{opacity:1;visibility:visible;transform:none}
+.cv-top{flex:none;display:flex;align-items:center;gap:18px;height:var(--hh);padding:0 var(--pad);border-bottom:1px solid var(--line)}
+.cv-top .logo img{height:26px}
+.cv-back{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:all .2s}
+.cv-back:hover{border-color:rgba(246,184,136,.5)}
+.crumbs{display:flex;align-items:center;gap:10px;min-width:0;font-size:15px;color:var(--mute);white-space:nowrap;overflow:hidden}
+.crumbs a:hover{color:var(--ivory)}
+.crumbs i{font-style:normal;color:var(--faint)}
+.crumbs b{font-weight:400;color:var(--ivory);overflow:hidden;text-overflow:ellipsis}
+.cv-top .x{position:static;margin-left:auto;flex:none;width:44px;height:44px}
+.cv-body{flex:1;min-height:0;display:grid;grid-template-columns:320px 1fr}
+.cv-side{border-right:1px solid var(--line);padding:28px 22px 28px 40px;overflow:auto;display:flex;flex-direction:column}
+.cv-side a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border-radius:14px;font-size:16px;color:var(--mute);transition:all .2s}
+.cv-side a span{font-size:12.5px;color:var(--faint);white-space:nowrap}
+.cv-side a b{white-space:nowrap}
+.cv-side a:hover{color:var(--ivory);background:rgba(239,234,225,.04)}
+.cv-side a.on{color:var(--ivory);background:rgba(239,234,225,.07)}
+.cv-side a.on::before{content:"";width:6px;height:6px;margin-right:-4px;border-radius:50%;background:var(--o1);box-shadow:0 0 10px var(--o2);order:-1}
+.cv-side a.on b{margin-right:auto}
+.cv-side b{font-weight:400}
+.cv-side .side-cta{margin-top:auto;padding-top:22px;padding:22px;border-radius:22px;background:linear-gradient(160deg,rgba(232,132,78,.16),rgba(169,83,43,.05) 60%),var(--card);border:1px solid var(--line)}
+.side-cta p{font-size:14px;line-height:1.5;color:var(--mute);margin:8px 0 16px}
+.side-cta b{font-size:18px;font-weight:400;color:var(--ivory)}
+.side-cta .btn{padding-left:20px;font-size:15px}
+.cv-main{overflow:auto;padding:44px var(--pad) 80px 48px;-webkit-overflow-scrolling:touch}
+.cv-chips{display:none}
+.cv-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:30px}
+.cv-head .h2{margin-top:12px;font-size:64px;text-wrap:balance}
+.cv-head .note{font-size:14px;color:var(--faint);text-align:right;line-height:1.5}
+.subs{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 26px}
+.subs a{height:40px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;color:var(--mute);transition:all .2s}
+.subs a:hover{color:var(--ivory)}
+.subs a.on{border-color:rgba(246,184,136,.55);color:var(--ivory)}
+.cv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cv-grid .cat{height:340px;opacity:1;transform:none}
+.cv-grid .cat .from{display:block;margin-top:6px;font-size:15px;color:var(--o1)}
+.cv-grid .cat .from.ask{color:var(--faint)}
+.cv-grid .cat.used{background:linear-gradient(160deg,rgba(232,132,78,.14),rgba(0,0,0,0) 60%),var(--card)}
+.cv-grid .cat.used .big{font-weight:300;font-size:64px;letter-spacing:-.04em;line-height:1}
+.pc{display:flex;flex-direction:column;padding:22px;border-radius:26px;border:1px solid var(--line);background:radial-gradient(120% 70% at 50% 0%,#1A1716 0%,var(--card) 62%)}
+.pc .im{height:230px;display:grid;place-items:center;margin-bottom:18px}
+.pc .im img{max-height:220px;max-width:88%;object-fit:contain;filter:drop-shadow(0 20px 30px rgba(0,0,0,.55))}
+.pc .im.cover{border-radius:18px;overflow:hidden;background:#000}
+.pc .im.cover img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:72% 28%;filter:none}
+.pc h4{font-weight:400;font-size:20px;letter-spacing:-.01em}
+.pc .sp{margin-top:6px;font-size:14.5px;color:var(--mute)}
+.pc .cl{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:13.5px;color:var(--mute)}
+.pc .cl span{display:inline-flex;align-items:center;gap:7px}
+.pc .cl i{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.pc .pr{margin-top:auto;padding-top:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.pc .pr b{font-weight:300;font-size:30px;letter-spacing:-.03em;white-space:nowrap}
+.pc .pr b.ask{font-size:19px;color:var(--mute)}
+.pc .pr small{display:block;font-size:12.5px;color:var(--faint);margin-top:4px}
+.pc .btn{margin-top:16px;width:100%}
+.pc.wide{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.pc.wide .im{height:300px;margin:0}
+.pc.wide .im img{max-height:290px}
+.pc.wide p{margin-top:12px;font-size:15.5px;line-height:1.55;color:var(--mute)}
+.cv-more{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:16px;padding:26px 30px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(100deg,rgba(232,132,78,.12),rgba(0,0,0,0) 55%),var(--card)}
+.cv-more b{display:block;font-weight:300;font-size:26px;letter-spacing:-.02em}
+.cv-more span{display:block;margin-top:6px;font-size:14.5px;color:var(--mute)}
+@media (max-width:1180px){
+  .cv-body{grid-template-columns:1fr}
+  .cv-side{display:none}
+  .cv-main{padding-left:var(--pad)}
+  .cv-chips{display:flex;gap:8px;overflow-x:auto;margin:-14px calc(var(--pad) * -1) 26px;padding:0 var(--pad);scrollbar-width:none}
+  .cv-chips::-webkit-scrollbar{display:none}
+  .cv-chips a{flex:none;height:40px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;color:var(--mute)}
+  .cv-chips a.on{border-color:rgba(246,184,136,.55);color:var(--ivory)}
+  .cv-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .cv-top{gap:12px}
+  .cv-back,.cv-top .x{width:40px;height:40px}
+  .crumbs{font-size:14px}
+  .crumbs .lv0,.crumbs .lv0+i{display:none}
+  .cv-main{padding:26px var(--pad) 120px}
+  .cv-head{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:22px}
+  .cv-head .h2{font-size:42px}
+  .cv-head .note{text-align:left;font-size:13px}
+  .subs{flex-wrap:nowrap;overflow-x:auto;margin:-4px calc(var(--pad) * -1) 20px;padding:0 var(--pad);scrollbar-width:none}
+  .subs::-webkit-scrollbar{display:none}
+  .subs a{flex:none;height:38px;font-size:14px}
+  .cv-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cv-grid .cat{height:230px;padding:16px;border-radius:22px}
+  .cv-grid .cat .im img{max-height:120px}
+  .cv-grid .cat .from{font-size:13px}
+  .cv-grid .cat.used .big{font-size:40px}
+  .cv-grid.items{grid-template-columns:1fr}
+  .pc{padding:18px;border-radius:22px}
+  .pc .im{height:200px;margin-bottom:12px}
+  .pc .im img{max-height:190px}
+  .pc.wide{grid-column:auto;display:flex}
+  .pc.wide .im{height:220px}
+  .pc .pr b{font-size:26px}
+  .cv-more{flex-direction:column;align-items:stretch;padding:22px 20px}
+  .cv-more .btn{width:100%}
+}
+
 /* overlays */
 .ov{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .ov.open{opacity:1;visibility:visible}
@@ -365,7 +467,7 @@ footer .r{margin-left:auto}
 <header>
   <a class="logo" href="#top" aria-label="ай.лавка — на главную"><img src="a/word_light.png" alt="ай.лавка"></a>
   <nav class="main">
-    <a href="#iphone" class="on">iPhone</a><a href="#catalog" data-cat="ipad">iPad</a><a href="#catalog" data-cat="mac">Mac</a><a href="#catalog" data-cat="watch">Watch</a><a href="#catalog" data-cat="airpods">AirPods</a><a href="#catalog" data-cat="samsung">Samsung</a><a href="#catalog" data-cat="dyson">Dyson</a><a href="#used">Б/у</a>
+    <a href="#iphone" class="on">iPhone</a><a href="#c/ipad">iPad</a><a href="#c/mac">Mac</a><a href="#c/watch">Watch</a><a href="#c/airpods">AirPods</a><a href="#c/samsung">Samsung</a><a href="#c/dyson">Dyson</a><a href="#used">Б/у</a>
   </nav>
   <div class="h-right">
     <a class="h-contact" href="tel:+73452780707"><b>+7 (3452) 78-07-07</b><span>Герцена, 86а · ежедневно 11:00–20:00</span></a>
@@ -393,7 +495,7 @@ footer .r{margin-left:auto}
       </div>
       <div class="b-right"><b class="gold">до 36 месяцев</b><span>рассрочка — Халва, Яндекс Сплит, кредит</span></div>
     </div>
-    <div class="m-facts"><div><b>Trade-in</b>старый iPhone в зачёт</div><div><b>До 36 мес</b>рассрочка</div><div><b>Оригинал</b>только оригинальная техника</div></div>
+    <div class="m-facts"><div><b>Trade-in</b>старый iPhone в зачёт</div><div><b>До 36 мес</b>рассрочка</div><div><b>Б/у iPhone</b>от 8 990 ₽</div></div>
   </section>
 
   <!-- 2. Конфигуратор -->
@@ -430,16 +532,16 @@ footer .r{margin-left:auto}
   <section class="sec wrap" id="catalog">
     <div class="sec-head rv">
       <div><div class="eyebrow"><i></i>Каталог</div><h2 class="h2" style="margin-top:14px">Не только iPhone</h2></div>
-      <p class="lead">Apple, Samsung, Sony, Dyson и другая техника. Наличие и цену подскажет менеджер — по телефону или в Telegram.</p>
+      <div><p class="lead">Apple, Samsung, Sony, Dyson и другая техника. Наличие и цену подскажет менеджер — по телефону или в Telegram.</p><a class="link" href="#c" style="display:inline-block;margin-top:18px">Открыть весь каталог</a></div>
     </div>
     <div class="cats">
-      <button class="cat rv" data-cat="ipad" data-item="iPad"><div class="im"><img src="a/cat/ipad.webp" alt="iPad" loading="lazy"></div><div class="t"><div><b>iPad</b><span>Pro, Air, mini</span></div><span class="ar">→</span></div></button>
+      <button class="cat rv" data-cat="ipad" data-item="iPad"><div class="im"><img src="a/cat/ipad.webp" alt="iPad" loading="lazy"></div><div class="t"><div><b>iPad</b><span>от 44 990 ₽</span></div><span class="ar">→</span></div></button>
       <button class="cat rv" data-cat="mac" data-item="MacBook"><div class="im"><img src="a/cat/mac.webp" alt="MacBook" loading="lazy"></div><div class="t"><div><b>Mac</b><span>MacBook Air и Pro</span></div><span class="ar">→</span></div></button>
-      <button class="cat rv" data-cat="watch" data-item="Apple Watch"><div class="im"><img src="a/cat/watch.webp" alt="Apple Watch" loading="lazy"></div><div class="t"><div><b>Apple Watch</b><span>Series и Ultra</span></div><span class="ar">→</span></div></button>
-      <button class="cat rv" data-cat="airpods" data-item="AirPods"><div class="im"><img src="a/cat/airpods.webp" alt="AirPods" loading="lazy"></div><div class="t"><div><b>AirPods</b><span>AirPods и AirPods Pro</span></div><span class="ar">→</span></div></button>
+      <button class="cat rv" data-cat="watch" data-item="Apple Watch"><div class="im"><img src="a/cat/watch.webp" alt="Apple Watch" loading="lazy"></div><div class="t"><div><b>Apple Watch</b><span>от 31 990 ₽</span></div><span class="ar">→</span></div></button>
+      <button class="cat rv" data-cat="airpods" data-item="AirPods"><div class="im"><img src="a/cat/airpods.webp" alt="AirPods" loading="lazy"></div><div class="t"><div><b>AirPods</b><span>от 13 990 ₽</span></div><span class="ar">→</span></div></button>
       <button class="cat rv" data-cat="samsung" data-item="Samsung Galaxy"><div class="im"><img src="a/cat/samsung.webp" alt="Samsung Galaxy" loading="lazy"></div><div class="t"><div><b>Samsung</b><span>смартфоны Galaxy</span></div><span class="ar">→</span></div></button>
       <button class="cat rv" data-cat="dyson" data-item="Dyson"><div class="im"><img src="a/cat/dyson.webp" alt="Dyson" loading="lazy"></div><div class="t"><div><b>Dyson</b><span>техника для волос и дома</span></div><span class="ar">→</span></div></button>
-      <button class="cat rv" data-cat="sony" data-item="Sony PlayStation"><div class="im"><img src="a/cat/playstation.webp" alt="PlayStation" loading="lazy"></div><div class="t"><div><b>Sony</b><span>PlayStation и не только</span></div><span class="ar">→</span></div></button>
+      <button class="cat rv" data-cat="sony" data-item="Sony PlayStation"><div class="im"><img src="a/cat/playstation.webp" alt="PlayStation" loading="lazy"></div><div class="t"><div><b>PlayStation</b><span>от 7 990 ₽</span></div><span class="ar">→</span></div></button>
       <div class="cat order rv"><div><div class="big">Нет нужной модели?</div><p>Привезём под заказ — напишите, что ищете.</p></div><button class="btn sm" data-order="custom">Оставить заявку<span class="c"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
     </div>
   </section>
@@ -494,6 +596,7 @@ footer .r{margin-left:auto}
           <div><span>Telegram</span><a href="https://t.me/ilavka72" target="_blank" rel="noopener">@ilavka72</a></div>
           <div><span>Новинки</span><a href="https://t.me/i_lavka72" target="_blank" rel="noopener">t.me/i_lavka72</a></div>
           <div><span>Б/у техника</span><a href="https://t.me/ilavka_reuse72" target="_blank" rel="noopener">t.me/ilavka_reuse72</a></div>
+          <div><span>Отзывы</span><a href="https://www.avito.ru/brands/0d86a66ad1b251bc3c53cd2d1cd02d86" target="_blank" rel="noopener">5,0 на Авито · 123 отзыва</a></div>
         </div>
         <div class="c-btns">
           <a class="btn" href="tel:+73452780707">Позвонить<span class="c"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></a>
@@ -511,7 +614,7 @@ footer .r{margin-left:auto}
 
 <footer>
   <a class="logo" href="#top"><img src="a/word_light.png" alt="ай.лавка"></a>
-  <nav><a href="#iphone">iPhone 18 Pro</a><a href="#catalog">Каталог</a><a href="#used">Б/у</a><a href="#trade">Trade-in</a><a href="#trade">Рассрочка</a><a href="#contacts">Контакты</a></nav>
+  <nav><a href="#iphone">iPhone 18 Pro</a><a href="#c">Каталог</a><a href="#used">Б/у</a><a href="#trade">Trade-in</a><a href="#trade">Рассрочка</a><a href="#contacts">Контакты</a></nav>
   <span class="r">© 2026 ай.лавка · Тюмень</span>
 </footer>
 
@@ -519,8 +622,21 @@ footer .r{margin-left:auto}
 
 <!-- меню (телефон) -->
 <div class="menu" id="menu">
-  <nav><a href="#iphone">iPhone 18 Pro</a><a href="#catalog">Каталог</a><a href="#used">Б/у iPhone</a><a href="#trade">Trade-in и рассрочка</a><a href="#contacts">Контакты</a></nav>
+  <nav><a href="#iphone">iPhone 18 Pro</a><a href="#c">Каталог</a><a href="#used">Б/у iPhone</a><a href="#trade">Trade-in и рассрочка</a><a href="#contacts">Контакты</a></nav>
   <div class="mc"><b><a href="tel:+73452780707">+7 (3452) 78-07-07</a></b>Герцена, 86а · ежедневно 11:00–20:00</div>
+</div>
+
+<!-- каталог -->
+<div class="cv" id="cv" aria-hidden="true">
+  <div class="cv-top">
+    <button class="cv-back" id="cvBack" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <nav class="crumbs" id="crumbs"></nav>
+    <button class="x" id="cvClose" aria-label="Закрыть каталог"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="cv-body">
+    <aside class="cv-side" id="cvSide"></aside>
+    <div class="cv-main" id="cvMain"></div>
+  </div>
 </div>
 
 <!-- поиск -->
@@ -608,7 +724,7 @@ footer .r{margin-left:auto}
   // заявка
   var ov=$('#order'),modal=$('#modal'),last=null;
   function openOv(el){el.classList.add('open');document.body.classList.add('lock')}
-  function closeOv(el){el.classList.remove('open');if(!$('.ov.open')&&!$('#menu').classList.contains('open'))document.body.classList.remove('lock')}
+  function closeOv(el){el.classList.remove('open');if(!$('.ov.open')&&!$('#menu').classList.contains('open')&&!$('#cv').classList.contains('open'))document.body.classList.remove('lock')}
   function order(kind,btn){
     var t='Узнать цену и наличие',it='';
     if(kind==='hero')it='iPhone 18 Pro · '+state.heroMem;
@@ -618,13 +734,16 @@ footer .r{margin-left:auto}
     if(kind==='credit'){t='Рассрочка до 36 месяцев';it='Халва, Яндекс Сплит или кредит'}
     if(kind==='custom'){t='Привезём под заказ';it='Напишите модель — менеджер уточнит срок и цену'}
     if(kind==='cat'){it=btn.dataset.item+' — наличие и цены'}
+    if(kind==='item'){t=btn.dataset.title||t;it=btn.dataset.item}
     $('#mTitle').textContent=t;$('#mItem').textContent=it;
     modal.classList.remove('done');$('#telF').classList.remove('err');
     last=btn;openOv(ov);setTimeout(function(){$('#fName').focus({preventScroll:true})},350);
   }
   document.addEventListener('click',function(e){
     var b=e.target.closest('[data-order]');if(b){e.preventDefault();order(b.dataset.order,b);return}
-    var c=e.target.closest('.cat[data-item]');if(c){order('cat',c);return}
+    var ca=e.target.closest('a[href="#c"],a[href^="#c/"]');if(ca){e.preventDefault();$('#menu').classList.remove('open');$$('.ov.open').forEach(closeOv);goCat(ca.getAttribute('href'));return}
+    var lv=e.target.closest('[data-cv-leave]');if(lv){e.preventDefault();var to=lv.getAttribute('href');closeCat(function(){var el=$(to);if(el)el.scrollIntoView({behavior:'smooth'})});return}
+    var c=e.target.closest('.cat[data-cat]');if(c&&!c.closest('.cv')){goCat('#c/'+c.dataset.cat);return}
     if(e.target.closest('[data-close]')||e.target.classList.contains('ov')){var o=e.target.closest('.ov');if(o)closeOv(o);if(last&&o===ov)last.focus({preventScroll:true});return}
     if(e.target.closest('[data-open="search"]')){openSearch();return}
     if(e.target.closest('[data-bag]')){toast('Корзина пуста — выберите технику и нажмите «Узнать цену»');return}
@@ -634,7 +753,7 @@ footer .r{margin-left:auto}
       $$('.ov.open').forEach(closeOv);
       var cat=a.dataset.cat;if(cat){var t=$('.cat[data-cat="'+cat+'"]');if(t){t.classList.add('flash');setTimeout(function(){t.classList.remove('flash')},1600)}}}
   });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){$$('.ov.open').forEach(closeOv);$('#menu').classList.remove('open');document.body.classList.remove('lock')}});
+  document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if($('.ov.open')){$$('.ov.open').forEach(closeOv);return}if(cv.classList.contains('open')){closeCat();return}$('#menu').classList.remove('open');document.body.classList.remove('lock')});
 
   // маска телефона
   var tel=$('#fTel');
@@ -650,7 +769,7 @@ footer .r{margin-left:auto}
 
   // поиск
   var idx=[['iPhone 18 Pro','новинка','#iphone'],['iPhone 18 Pro Max','новинка','#iphone'],['Б/у iPhone','16 моделей','#used'],['Trade-in','обмен старого iPhone','#trade'],['Рассрочка','до 36 месяцев','#trade'],
-    ['iPad','каталог','#catalog'],['Mac','каталог','#catalog'],['Apple Watch','каталог','#catalog'],['AirPods','каталог','#catalog'],['Samsung Galaxy','каталог','#catalog'],['Dyson','каталог','#catalog'],['PlayStation','каталог','#catalog'],['Контакты и адрес','Герцена, 86а','#contacts']];
+    ['iPad','от 44 990 ₽','#c/ipad'],['Mac','MacBook Air и Pro','#c/mac'],['Apple Watch','от 31 990 ₽','#c/watch'],['AirPods','от 13 990 ₽','#c/airpods'],['Samsung Galaxy','каталог','#c/samsung'],['Dyson','каталог','#c/dyson'],['PlayStation','от 7 990 ₽','#c/sony'],['Каталог','вся техника','#c'],['Контакты и адрес','Герцена, 86а','#contacts']];
   used.forEach(function(u){idx.push([u[0]+' '+u[1]+' '+u[3],'б/у · '+fmt(u[5]),'#used'])});
   var sOv=$('#search'),q=$('#q'),ql=$('#qList');
   function renderQ(){var v=q.value.trim().toLowerCase(),res=idx.filter(function(x){return !v||(x[0]+' '+x[1]).toLowerCase().indexOf(v)>-1}).slice(0,8);
@@ -658,6 +777,103 @@ footer .r{margin-left:auto}
   function openSearch(){q.value='';renderQ();openOv(sOv);setTimeout(function(){q.focus()},200)}
   q.addEventListener('input',renderQ);
   q.addEventListener('keydown',function(e){if(e.key==='Enter'){var a=$('a',ql);if(a)a.click()}});
+
+
+  // каталог: категория → линейка → модели
+  var SW={bur:['#7A2E3B','Бордовый'],black:['#232325','Чёрный'],silver:['#E3E3E0','Серебристый'],blue:['#AFC6E0','Синий'],bronze:['#B08D6E','Бронзовый'],sgray:['#5E5E62','Space Gray'],white:['#F4F4F0','Белый']};
+  var ARR='<span class="c"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+  var CAT=[
+    {id:'iphone',name:'iPhone',img:'a/p/iphone18.webp',lead:'Новинки iPhone 18 Pro и б/у iPhone с проверенным аккумулятором.',sub:[
+      {id:'18-pro-max',name:'iPhone 18 Pro Max',img:'a/p/iphone18.webp',note:'Цены на 24 сентября',items:[
+        {spec:'256 ГБ · SIM + eSIM',cl:['bur','black'],p:180000,cover:'a/burgundy.jpg'},{spec:'512 ГБ · SIM + eSIM',cl:['silver','bur'],p:200000,cover:'a/silver.jpg'},
+        {spec:'512 ГБ · eSIM',cl:['silver'],p:190000,cover:'a/silver.jpg'},{spec:'1 ТБ · eSIM',cl:['black'],p:225000,cover:'a/black.jpg'}]},
+      {id:'18-pro',name:'iPhone 18 Pro',img:'a/p/iphone18.webp',note:'Цена на 21 сентября',items:[{spec:'256 ГБ · eSIM',cl:['bur'],p:177000,cover:'a/burgundy.jpg'},{spec:'256 ГБ · eSIM',cl:['black'],p:177000,cover:'a/black.jpg'}]},
+      {id:'used',name:'Б/у iPhone',href:'#used',from:8990,big:'16',txt:'моделей в наличии'}]},
+    {id:'ipad',name:'iPad',img:'a/cat/ipad.webp',lead:'Планшеты Apple — от базового iPad до iPad Pro.',sub:[
+      {id:'ipad-11',name:'iPad 11 (2025)',img:'a/p/ipad-base.webp',note:'Цена на 21 октября',items:[{spec:'128 ГБ · Wi-Fi',cl:['silver'],p:44990}]},
+      {id:'ipad-air',name:'iPad Air',img:'a/p/ipad-air.webp'},
+      {id:'ipad-pro',name:'iPad Pro',img:'a/cat/ipad.webp'},
+      {id:'ipad-mini',name:'iPad mini',img:'a/p/ipad-mini.webp'}]},
+    {id:'mac',name:'Mac',img:'a/cat/mac.webp',lead:'Ноутбуки MacBook Air и MacBook Pro.',sub:[
+      {id:'macbook-air',name:'MacBook Air',img:'a/cat/mac.webp'},
+      {id:'macbook-pro',name:'MacBook Pro',img:'a/p/macbook-pro.webp'}]},
+    {id:'watch',name:'Apple Watch',img:'a/cat/watch.webp',lead:'Apple Watch Series и Ultra.',sub:[
+      {id:'series-12',name:'Apple Watch Series 12',img:'a/cat/watch.webp',note:'Цены на 24 сентября',items:[{spec:'42 мм',cl:['bronze'],p:55000},{spec:'46 мм',cl:['black'],p:65000}]},
+      {id:'series-11',name:'Apple Watch Series 11',img:'a/p/watch-s11.webp',note:'Цены на 21 октября',items:[{spec:'42 мм',cl:['sgray'],p:31990},{spec:'46 мм',cl:['sgray'],p:33990}]},
+      {id:'ultra',name:'Apple Watch Ultra',img:'a/p/watch-ultra.webp'}]},
+    {id:'airpods',name:'AirPods',img:'a/cat/airpods.webp',lead:'Наушники Apple — от AirPods 4 до AirPods Max.',sub:[
+      {id:'airpods-pro-3',name:'AirPods Pro 3',img:'a/cat/airpods.webp',note:'Цена на 21 октября',items:[{spec:'с зарядным кейсом',p:20990}]},
+      {id:'airpods-4',name:'AirPods 4',img:'a/p/airpods-4.webp',note:'Цена на 21 октября',items:[{spec:'с активным шумоподавлением',p:13990}]},
+      {id:'airpods-5',name:'AirPods 5',img:'a/p/airpods-5.webp',note:'Цена на 21 октября',items:[{spec:'с беспроводным зарядным кейсом',p:15990}]},
+      {id:'airpods-max',name:'AirPods Max',img:'a/p/airpods-max.webp'}]},
+    {id:'samsung',name:'Samsung',img:'a/cat/samsung.webp',lead:'Смартфоны Samsung Galaxy.',sub:[
+      {id:'s26-ultra',name:'Galaxy S26 Ultra',img:'a/cat/samsung.webp'},
+      {id:'s26',name:'Galaxy S26',img:'a/p/galaxy-s26.webp'},
+      {id:'z-fold',name:'Galaxy Z Fold',img:'a/p/galaxy-fold.webp'},
+      {id:'z-flip',name:'Galaxy Z Flip',img:'a/p/galaxy-flip.webp'}]},
+    {id:'dyson',name:'Dyson',img:'a/cat/dyson.webp',lead:'Стайлеры и фены Dyson.',sub:[
+      {id:'airwrap',name:'Dyson Airwrap',img:'a/p/dyson-airwrap.webp'},
+      {id:'supersonic',name:'Dyson Supersonic',img:'a/cat/dyson.webp'}]},
+    {id:'sony',name:'PlayStation',img:'a/cat/playstation.webp',lead:'Консоли Sony PlayStation 5 и геймпады.',sub:[
+      {id:'ps5-slim',name:'PlayStation 5 Slim',img:'a/p/ps5-slim.webp',note:'Цена на 21 октября',items:[{spec:'1 ТБ',cl:['white'],p:74990}]},
+      {id:'ps5-pro',name:'PlayStation 5 Pro',img:'a/cat/playstation.webp'},
+      {id:'dualsense',name:'Геймпад DualSense',img:'a/p/dualsense.webp',note:'Цена на 21 октября',items:[{spec:'беспроводной, для PS5',cl:['white'],p:7990}]}]}
+  ];
+  function subFrom(s){if(s.from)return s.from;if(!s.items)return 0;return Math.min.apply(null,s.items.map(function(i){return i.p}))}
+  function catFrom(c){var v=c.sub.map(subFrom).filter(Boolean);return v.length?Math.min.apply(null,v):0}
+  function fromTxt(v){return v?'<span class="from">от '+fmt(v)+'</span>':'<span class="from ask">цена по запросу</span>'}
+  function esc(t){return String(t).replace(/"/g,'&quot;')}
+  var cv=$('#cv'),cvMain=$('#cvMain'),cvSide=$('#cvSide'),crumbs=$('#crumbs');
+  function find(p){var c=null,s=null;CAT.forEach(function(x){if(x.id===p[0])c=x});if(c&&p[1])c.sub.forEach(function(x){if(x.id===p[1])s=x});return {c:c,s:s}}
+  function tile(href,img,name,from,extra){return '<a class="cat" href="'+href+'"><div class="im"><img src="'+img+'" alt="'+esc(name)+'" loading="lazy"></div><div class="t"><div><b>'+name+'</b>'+from+'</div><span class="ar">→</span></div></a>'}
+  function renderCat(p){
+    var f=find(p),c=f.c,s=f.s,h='';
+    if(p[0]&&!c){p=[];}
+    if(p[1]&&!s){p=[p[0]];}
+    cvSide.innerHTML='<a href="#c"'+(!c?' class="on"':'')+'><b>Весь каталог</b></a>'+CAT.map(function(x){var v=catFrom(x);return '<a href="#c/'+x.id+'"'+(c===x?' class="on"':'')+'><b>'+x.name+'</b><span>'+(v?'от '+fmt(v):'')+'</span></a>'}).join('')+
+      '<div class="side-cta"><b>Нет нужной модели?</b><p>Привезём под заказ — напишите, что ищете.</p><button class="btn sm" data-order="custom" style="width:100%">Оставить заявку'+ARR+'</button></div>';
+    var cr='<a class="lv0" href="#c">Каталог</a>';
+    if(c)cr+='<i>/</i>'+(s?'<a href="#c/'+c.id+'">'+c.name+'</a>':'<b>'+c.name+'</b>');
+    if(s)cr+='<i>/</i><b>'+s.name+'</b>';
+    if(!c)cr='<b>Каталог</b>';
+    crumbs.innerHTML=cr;
+    var chips='<div class="cv-chips">'+CAT.map(function(x){return '<a href="#c/'+x.id+'"'+(c===x?' class="on"':'')+'>'+x.name+'</a>'}).join('')+'</div>';
+    if(!c){
+      h=chips+'<div class="cv-head"><div><div class="eyebrow"><i></i>ай.лавка</div><h2 class="h2">Каталог</h2></div><div class="note">Наличие и цену уточнит менеджер<br>78-07-07 · ежедневно 11:00–20:00</div></div>'+
+        '<div class="cv-grid">'+CAT.map(function(x){return tile('#c/'+x.id,x.img,x.name,fromTxt(catFrom(x)))}).join('')+'</div>';
+    }else if(!s){
+      h=chips+'<div class="cv-head"><div><div class="eyebrow"><i></i>Каталог</div><h2 class="h2">'+c.name+'</h2></div><div class="note">'+c.lead+'</div></div>'+
+        '<div class="cv-grid">'+c.sub.map(function(x){
+          if(x.href)return '<a class="cat used" href="'+x.href+'" data-cv-leave><div class="im"><div style="text-align:center"><div class="big gold">'+x.big+'</div><div style="margin-top:6px;color:var(--mute);font-size:15px">'+x.txt+'</div></div></div><div class="t"><div><b>'+x.name+'</b>'+fromTxt(x.from)+'</div><span class="ar">→</span></div></a>';
+          return tile('#c/'+c.id+'/'+x.id,x.img,x.name,fromTxt(subFrom(x)))}).join('')+'</div>';
+    }else{
+      var subs='<div class="subs">'+c.sub.map(function(x){return '<a href="'+(x.href||'#c/'+c.id+'/'+x.id)+'"'+(x===s?' class="on"':'')+(x.href?' data-cv-leave':'')+'>'+x.name+'</a>'}).join('')+'</div>';
+      var items;
+      if(s.items){items='<div class="cv-grid items">'+s.items.map(function(it){
+          var cl=(it.cl||[]).map(function(k){return '<span><i style="background:'+SW[k][0]+'"></i>'+SW[k][1]+'</span>'}).join('');
+          var label=s.name+' · '+it.spec+(it.cl?' · '+it.cl.map(function(k){return SW[k][1]}).join(' / '):'')+' · '+fmt(it.p);
+          return '<div class="pc"><div class="im'+(it.cover?' cover':'')+'"><img src="'+(it.cover||s.img)+'" alt="'+esc(s.name)+'" loading="lazy"></div><h4>'+s.name+'</h4><div class="sp">'+it.spec+'</div>'+(cl?'<div class="cl">'+cl+'</div>':'')+
+            '<div class="pr"><div><b>'+fmt(it.p)+'</b></div></div><button class="btn sm" data-order="item" data-title="Забронировать" data-item="'+esc(label)+'">Забронировать'+ARR+'</button></div>'}).join('')+'</div>';
+      }else{
+        items='<div class="cv-grid items"><div class="pc wide"><div class="im"><img src="'+s.img+'" alt="'+esc(s.name)+'" loading="lazy"></div><div><h4 style="font-size:28px;font-weight:300;letter-spacing:-.02em">'+s.name+'</h4><p>Наличие, конфигурации и цену подскажет менеджер. Если нужной модели нет в магазине — привезём под заказ.</p><div class="pr" style="padding-top:18px"><b class="ask">Цена по запросу</b></div><button class="btn sm" data-order="item" data-item="'+esc(s.name+' — наличие и цена')+'">Узнать цену и наличие'+ARR+'</button></div></div></div>';
+      }
+      h='<div class="cv-head"><div><div class="eyebrow"><i></i>'+c.name+'</div><h2 class="h2">'+s.name+'</h2></div><div class="note">'+(s.note?s.note+'<br>':'')+'Наличие уточняйте у менеджера</div></div>'+subs+items+
+        '<div class="cv-more"><div><b>Нужна другая конфигурация?</b><span>Подберём память и цвет или привезём под заказ.</span></div><button class="btn sm" data-order="custom">Оставить заявку'+ARR+'</button></div>';
+    }
+    cvMain.innerHTML=h;cvMain.scrollTop=0;
+  }
+  function parseC(h){if(h!=='#c'&&h.indexOf('#c/')!==0)return null;return h.slice(2).split('/').filter(Boolean)}
+  function showCat(){if(!cv.classList.contains('open')){cv.classList.add('open');cv.setAttribute('aria-hidden','false');document.body.classList.add('lock')}}
+  function hideCat(){cv.classList.remove('open');cv.setAttribute('aria-hidden','true');if(!$('.ov.open')&&!$('#menu').classList.contains('open'))document.body.classList.remove('lock')}
+  function route(){var p=parseC(location.hash);if(!p){hideCat();return}renderCat(p);showCat()}
+  function goCat(h){var d=(history.state&&history.state.cv)||0;history.pushState({cv:d+1},'',h);route()}
+  function closeCat(after){var d=(history.state&&history.state.cv)||0;
+    if(d>0){var done=function(){window.removeEventListener('popstate',done);if(after)setTimeout(after,30)};window.addEventListener('popstate',done);history.go(-d)}
+    else{history.replaceState(null,'',location.pathname+location.search);hideCat();if(after)after()}}
+  window.addEventListener('popstate',route);
+  $('#cvClose').addEventListener('click',function(){closeCat()});
+  $('#cvBack').addEventListener('click',function(){var d=(history.state&&history.state.cv)||0;if(d>0)history.back();else{var p=parseC(location.hash)||[];if(!p.length){closeCat();return}p.pop();history.replaceState(null,'',p.length?'#c/'+p.join('/'):'#c');route()}});
+  route();
 
   // тост
   var tt;function toast(s){var t=$('#toast');t.textContent=s;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},2600)}
